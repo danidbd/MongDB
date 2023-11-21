@@ -1,9 +1,9 @@
 package com.example.mongodb.services;
 
 import com.example.mongodb.domain.User;
+import com.example.mongodb.dto.UserDTO;
 import com.example.mongodb.repository.UserRepository;
-
-import com.example.mongodb.resources.exception.ObjectNotFoundException;
+import com.example.mongodb.resouces.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class UserService {
     @Autowired
     private UserRepository repo;
 
-    public List<User> findAll (){
+    public List<User> findAll() {
         return repo.findAll();
     }
     public User findById(String id) {
@@ -23,4 +23,11 @@ public class UserService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
+    public User Insert(User obj){
+        return repo.insert(obj);
+    }
+
+    public User fromDTO(UserDTO objDto){
+        return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
+    }
 }

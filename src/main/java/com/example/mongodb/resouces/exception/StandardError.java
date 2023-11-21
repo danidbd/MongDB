@@ -1,4 +1,4 @@
-package com.example.mongodb.resources.exception;
+package com.example.mongodb.resouces.exception;
 
 import java.io.Serializable;
 
@@ -60,5 +60,4 @@ public class StandardError implements Serializable {
     public void setPath(String path) {
         this.path = path;
     }
-    
 }

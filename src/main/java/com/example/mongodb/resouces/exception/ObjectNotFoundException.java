@@ -1,4 +1,4 @@
-package com.example.mongodb.resources.exception;
+package com.example.mongodb.resouces.exception;
 
 public class ObjectNotFoundException extends RuntimeException{
     public ObjectNotFoundException(String msg){
